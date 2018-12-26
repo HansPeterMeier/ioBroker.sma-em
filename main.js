@@ -49,7 +49,7 @@ function readData() {
     });
 
     client.on('message', function (message, rinfo) {
-        var ser = "Serial" + message.readUIntBE(points['SMASerial'].offset, points['SMASerial'].length) * points['SMASerial'].factor;
+        var ser = "Serial_" + message.readUIntBE(points['SMASerial'].offset, points['SMASerial'].length) * points['SMASerial'].factor;
 		 adapter.setObjectNotExists(ser, {
        		 type: 'channel',
      		 common: {
